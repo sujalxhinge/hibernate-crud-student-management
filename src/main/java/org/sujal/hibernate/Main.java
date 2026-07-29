@@ -3,6 +3,7 @@ package org.sujal.hibernate;
 import org.sujal.hibernate.entity.Student;
 import org.sujal.hibernate.service.StudentService;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -53,15 +54,71 @@ public class Main {
                 break;
 
             case 2:
-                System.out.println("View Student Selected");
+                System.out.print("Enter Student ID: ");
+                int id = sc.nextInt();
+
+                student = studentService.getStudentById(id);
+
+                if (student != null) {
+
+                    System.out.println("\n===== Student Details =====");
+                    System.out.println("ID         : " + student.getId());
+                    System.out.println("First Name : " + student.getFirstName());
+                    System.out.println("Last Name  : " + student.getLastName());
+                    System.out.println("Email      : " + student.getEmail());
+                    System.out.println("Age        : " + student.getAge());
+                    System.out.println("Course     : " + student.getCourse());
+
+                } else {
+
+                    System.out.println("Student not found!");
+
+                }
+
                 break;
 
             case 3:
-                System.out.println("View All Students Selected");
-                break;
 
+                List<Student> students = studentService.getAllStudents();
+
+                if(students.isEmpty()) {
+                    System.out.println("No students found");
+                }
+                else {
+
+                    for(Student s : students){
+                        System.out.println(s);
+                    }
+
+                }
+
+                break;
             case 4:
-                System.out.println("Update Student Selected");
+                System.out.print("Enter Student ID to update: ");
+                int id = sc.nextInt();
+
+                sc.nextLine();
+
+                System.out.print("Enter New Name: ");
+                String name = sc.nextLine();
+
+                System.out.print("Enter New Age: ");
+                int age = sc.nextInt();
+
+                sc.nextLine();
+
+                System.out.print("Enter New Course: ");
+                String course = sc.nextLine();
+
+
+                Student student = new Student(id, name, age, course);
+
+
+                studentService.updateStudent(student);
+
+
+                System.out.println("Student Updated Successfully!");
+
                 break;
 
             case 5:
