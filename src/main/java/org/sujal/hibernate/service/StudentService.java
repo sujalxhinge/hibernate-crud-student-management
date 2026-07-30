@@ -25,4 +25,7 @@ public class StudentService
         studentDAO.updateStudent(student);
 
     }
+    public void deleteStudent(Long id){
+        studentDAO.deleteStudent(id);
+    }
 }

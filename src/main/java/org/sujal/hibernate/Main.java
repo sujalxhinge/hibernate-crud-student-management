@@ -27,7 +27,6 @@ public class Main {
 
         int choice = sc.nextInt();
 
-        // Switch statement starts here
         switch (choice) {
 
             case 1:
@@ -95,7 +94,7 @@ public class Main {
                 break;
             case 4:
                 System.out.print("Enter Student ID to update: ");
-                int id = sc.nextInt();
+                id = sc.nextInt();
 
                 sc.nextLine();
 
@@ -103,18 +102,18 @@ public class Main {
                 String name = sc.nextLine();
 
                 System.out.print("Enter New Age: ");
-                int age = sc.nextInt();
+                age = sc.nextInt();
 
                 sc.nextLine();
 
                 System.out.print("Enter New Course: ");
-                String course = sc.nextLine();
+                course = sc.nextLine();
 
 
-                Student student = new Student(id, name, age, course);
+                Student stud = new Student();
 
 
-                studentService.updateStudent(student);
+                studentService.updateStudent(stud);
 
 
                 System.out.println("Student Updated Successfully!");
@@ -122,7 +121,9 @@ public class Main {
                 break;
 
             case 5:
-                System.out.println("Delete Student Selected");
+                System.out.println("Enter student id to delete: ");
+                Long id_num = sc.nextLong();
+                studentService.deleteStudent(id_num);
                 break;
 
             case 6:

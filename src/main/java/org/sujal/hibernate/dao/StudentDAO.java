@@ -70,5 +70,22 @@ public class StudentDAO {
         session.close();
 
     }
+    public void deleteStudent(Long id){
+        Session session = HibernateUtil
+                .getSessionFactory()
+                .openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Student student = session.find(Student.class, id);
+        if (student !=null){
+            session.remove(student);
+            System.out.println("Student delted succefully");
+        }
+        else{
+            System.out.println("Student not found");
+        }
+        transaction.commit();
+        session.close();
+    }
 
 }
