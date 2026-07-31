@@ -116,7 +116,7 @@ public class Main {
                 studentService.updateStudent(stud);
 
 
-                System.out.println("Student Updated Successfully!");
+                System.out.println("Student Updated Successfully! ");
 
                 break;
 
@@ -127,11 +127,11 @@ public class Main {
                 break;
 
             case 6:
-                System.out.println("Thank you!");
+                System.out.println("Thank you! ");
                 break;
 
             default:
-                System.out.println("Invalid Choice!");
+                System.out.println("Invalid Choice! ");
         }
 
         sc.close();
