@@ -42,7 +42,7 @@ public class Main {
                 System.out.print("Enter Age: ");
                 int age = sc.nextInt();
 
-                System.out.print("Enter Course: ");
+                System.out.print("Enter Course Name : ");
                 sc.nextLine(); // consume leftover newline
                 String course = sc.nextLine();
 
