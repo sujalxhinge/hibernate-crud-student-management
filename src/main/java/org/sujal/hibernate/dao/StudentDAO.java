@@ -82,7 +82,7 @@ public class StudentDAO {
             System.out.println("Student delted succefully");
         }
         else{
-            System.out.println("Student not found");
+            System.out.println("Student not found !");
         }
         transaction.commit();
         session.close();
